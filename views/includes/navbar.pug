@@ -1,0 +1,14 @@
+div.row()
+    div.col-md-12#gitNav()
+        nav.navbar.navbar-expand.navbar-dark.bg-dark()
+            a.navbar-brand() gitforme
+            div.collapse.navbar-collapse()
+                if user
+                    ul.navbar-nav()
+                        li.nav-item.active()
+                            a.nav-link() Teams
+                        li.nav-item()
+                            a.nav-link() Profile
+                        li.nav-item()
+                            a.nav-link() Settings
+            button.btn.btn-secondary.pull-right() Sign in
