@@ -3,5 +3,11 @@ extends layout
 block content
     div.container-fluid()
         include includes/navbar.pug
-        div.row()
-            p Welcome to #{title}
+        div.row#main()
+            div.col-lg-12.col-md-12()    
+                h1() gitforme
+            div.col-lg-12.col-md-12()
+                h3() Powerful github analytics, data, and insights tracking all in one place
+            div.col-lg-12.col-md-12#main-buttons()
+                button.btn.btn-info#lb() Learn more
+                button.btn.btn-primary#rb() Log in
