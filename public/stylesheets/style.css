@@ -1,6 +1,13 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+.row {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 a {
@@ -9,7 +16,12 @@ a {
 
 #gitNav {
     color:white;
-    background-color:black; 
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#gitNav nav {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -17,6 +29,7 @@ a {
 #front-page {
     padding-left: 0;
     padding-right: 0;
+
     height: 100%;
 
 }
@@ -53,7 +66,7 @@ a {
 }
 
 #learn-more {
-    padding-top: 50px;
+    padding-top: 30px;
     text-align: center;
     color: white;
     background-color: #343a40;
@@ -62,26 +75,32 @@ a {
     height: 100%;
 }
 
+#learn-more h1{
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
 #faq {
     width: 100%;
     text-align: left;
 }
 
 #faq h3{
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
 }
 
 #faq p {
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 
 .question {
-    padding: 10px;
+    padding: 8px;
 }
 
 #faq .sign-in {
     padding: 5px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
