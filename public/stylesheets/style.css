@@ -1,5 +1,6 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    height: 100vh;
 }
 
 a {
@@ -9,18 +10,26 @@ a {
 #gitNav {
     color:white;
     background-color:black; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#front-page {
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
+
 }
 
 #main {
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     text-align: center;
 }
 
 #main h1 {
     font-size: 5em;
-    font-decoration: bold;
+    font-weight: bold;
 }
 
 #main h3 {
@@ -41,4 +50,44 @@ a {
 #main-buttons #rb {
     margin-right: auto;
     margin-left: 30px;
+}
+
+#learn-more {
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    background-color: #343a40;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+}
+
+#faq {
+    width: 100%;
+    text-align: left;
+}
+
+#faq h3{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#faq p {
+    font-size: 1.4em;
+}
+
+.question {
+    padding: 10px;
+}
+
+#faq .sign-in {
+    padding: 5px;
+    text-align: center;
+}
+
+.sign-in button {
+    margin-top: 10px;
+    font-size: 1.5em;
+    padding: 15px;
+    width: 150px;
 }

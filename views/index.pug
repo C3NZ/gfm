@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div.container-fluid()
+    div.container-fluid#front-page()
         include includes/navbar.pug
         div.row#main()
             div.col-lg-12.col-md-12()    
@@ -9,5 +9,26 @@ block content
             div.col-lg-12.col-md-12()
                 h3() Powerful github analytics, data, and insights tracking all in one place
             div.col-lg-12.col-md-12#main-buttons()
-                button.btn.btn-info#lb() Learn more
-                button.btn.btn-primary#rb() Log in
+                button.btn.btn-primary#lb() Learn more
+                button.btn.btn-primary#rb() Sign in
+        div.col-lg-12.col-md-12#learn-more()
+            h1() Learn more
+            div.col-lg-6.offset-lg-3#faq()
+                div.question()
+                    h3() What is gitforme?
+                    p() gitforme is a is a powerful github analytics, data, and insight tracking tool that lets people track both user and organization github activity and usage to better understand the way they use the tool
+                div.question()
+                    h3() Why gitforme?
+                    p() Github provides very useful data, but not a useful way for you to consume it. We plan to make your github usage and activity more efficient while presenting you useful information in a fun way.
+                div.question()
+                    h3() Where do I register?
+                    p() You don't. All you need to is sign in with your github account and then you're all set to go!
+                div.question()
+                    h3() I don't want to be tracked anymore, how do I stop you from keeping track of future stats?
+                    p() Easy! In the settings page of our website, all you have to do is delete your account. From there, we will delete all information associated with your account with no questions asked.
+                div.question()
+                    h3() How can I trust you with access to my account?
+                    p() Our codebase is entirely open source and free to look at #[a(href='https://github.com/C3NZ/gfm') here]. At gitforme, we don't believe in keeping any secrets from our users.
+                div.sign-in()
+                    h3() We hope to have cleared everything up for you and 
+                    button.btn.btn-primary.lm-button() Sign in
