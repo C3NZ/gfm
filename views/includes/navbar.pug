@@ -11,4 +11,8 @@ div.row()
                             a.nav-link() Profile
                         li.nav-item()
                             a.nav-link() Settings
-            button.btn.btn-secondary.pull-right() Sign in
+                    p.pull-right() Welcome #{user.displayName}
+
+            unless user
+                form(action='/login', method='GET')
+                    button.btn.btn-secondary.pull-right() Sign in

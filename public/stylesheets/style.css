@@ -60,7 +60,8 @@ a {
     margin-right: 30px;
 }
 
-#main-buttons #rb {
+#main-buttons form {
+    display:inline;
     margin-right: auto;
     margin-left: 30px;
 }

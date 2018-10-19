@@ -10,10 +10,11 @@ var MongoStore = require('connect-mongo')(session);
 
 const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var authRouter = require('./routes/auth');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
 const teamsRouter = require('./routes/teams');
+const profilesRouter = require('./routes/profiles')
 
 if(!process.env.PORT) {
     require('dotenv').config()
@@ -34,16 +35,32 @@ passport.use(new GithubStrategy({
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: process.env.callbackURL || "http://localhost:3000/login/callback"
 }, (accessToken, refreshToken, profile, cb) => {
-    console.log(accessToken);
-    console.log(refreshToken);
-    //console.log(profile);
-    User.findOrCreate({githubID: profile.id}, (err, user) => {
-        return cb(err, user);
+    //Find the user that authenticated or create them in our database
+    User.find({githubID: profile.id}).then(user => {
+        if (!user.length) {
+            var newProfile = {
+                githubID: profile.id,
+                username: profile.username,
+                displayName: profile.displayName,
+                accessToken: accessToken
+            }
+            User.create(newProfile).then(newUser => {
+                return cb(null, newUser)
+            }).catch(err => {
+                return cb(err, null)
+            })
+        }else {
+            return cb(null, user)
+        }
+    }).catch(err => {
+        console.log('here')
+        return cb(err, null);
     });
 }));
 
 passport.serializeUser(function(user, done) {
-    done(null, user.githubID);
+    console.log(user)
+    done(null, user[0]._id);
 });
 
 passport.deserializeUser(function(id, done) {
@@ -70,6 +87,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', authRouter);
 app.use('/teams', teamsRouter);
+app.use('/profile', profilesRouter);
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

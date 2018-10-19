@@ -6,6 +6,6 @@ const User = require('../models/user');
 
 router.get('/', passport.authenticate('github'))
 
-router.get('/callback', passport.authenticate('github', {failureRedirect: '/', successRedirect: '/teams'}));
+router.get('/callback', passport.authenticate('github', {failureRedirect: '/', successRedirect: '/profile'}));
 
 module.exports = router;

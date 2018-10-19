@@ -32,4 +32,5 @@ block content
                         h3() How can I trust you with access to my account?
                         p() Our codebase is entirely open source and free to look at #[a(href='https://github.com/C3NZ/gfm') here]. At gitforme, we don't believe in keeping any secrets from our users.
                     div.sign-in()
-                        button.btn.btn-primary.lm-button() Sign in
+                        form(action='/login' method='GET')
+                            button.btn.btn-primary.lm-button() Sign in
