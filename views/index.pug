@@ -10,7 +10,8 @@ block content
                 h3() Powerful github analytics, data, and insights tracking all in one place
             div.col-lg-12.col-md-12#main-buttons()
                 button.btn.btn-primary#lb() Learn more
-                button.btn.btn-primary#rb() Sign in
+                form(action='/login' method='GET')
+                    button.btn.btn-primary#rb() Sign in
         div.row
             div.col-lg-12.col-md-12#learn-more()
                 h1() Learn more
